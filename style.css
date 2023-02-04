@@ -222,7 +222,7 @@ button:hover {
     }
 
     button, .operation {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
     }
 
     .calculatorSection {
@@ -231,18 +231,18 @@ button:hover {
     }
 
     #display {
-        font-size: 1.4rem;
+        font-size: 2rem;
         padding-bottom: 0.2rem;
         padding-top: 0;
         height: 3.2rem;
     }
 
     #displayResult {
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
 
     .title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
 }

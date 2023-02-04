@@ -17,15 +17,16 @@ const operation = {
     '/': function(n) {return n[0] / n[2]},
 }
 
-function count(numb) {
-    if (Number.isInteger(numb)) {
-        return 0;
-    } else {
-        return numb.toString().split('.')[1].length;
-    }
-};
-
 function roundNum(n) {
+
+    function count(numb) {
+        if (Number.isInteger(numb)) {
+            return 0;
+        } else {
+            return numb.toString().split('.')[1].length;
+        }
+    }
+
     if(count(n) >= 3){
         return parseFloat((n).toFixed(3)); 
     } else if(count(n) < 3) {
@@ -87,7 +88,6 @@ function inputSymbol(n) {
 };
 
 
-
 function calculate() {
 
     if(total_final.length > 0 && parseFloat(down_display.textContent) !== 0 && down_display.textContent != ''){
@@ -122,4 +122,3 @@ back.addEventListener('click',
         down_display.textContent = total.join('');
     }
 );
-
