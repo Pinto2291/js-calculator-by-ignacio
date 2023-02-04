@@ -17,6 +17,22 @@ const operation = {
     '/': function(n) {return n[0] / n[2]},
 }
 
+function count(numb) {
+    if (Number.isInteger(numb)) {
+        return 0;
+    } else {
+        return numb.toString().split('.')[1].length;
+    }
+};
+
+function roundNum(n) {
+    if(count(n) >= 3){
+        return parseFloat((n).toFixed(3)); 
+    } else if(count(n) < 3) {
+        return n;
+    }
+};
+
 const symbol = ['+', '-', 'x', '/'];
 
 function calculateTotal(n) {
@@ -50,8 +66,8 @@ function inputNumbers(n) {
         total.push(content);
         down_display.textContent = total.join('');
         console.log(total)
-    }
-  
+    } 
+
 }
 
 function inputSymbol(n) {
@@ -67,13 +83,7 @@ function inputSymbol(n) {
         up_display.textContent = total_final.join(' ');
         console.log(total_final);
 
-    } else if(down_display.textContent == '' && content == '-' && total[total.length - 1] != '.' && !symbol.includes(total[total.length - 1]) 
-    && parseFloat(down_display.textContent) !== 0) {
-
-        total.push(content);
-        down_display.textContent = total.join('');
-        console.log(total[total.length - 1])
-    }
+    } 
 };
 
 
@@ -83,10 +93,10 @@ function calculate() {
     if(total_final.length > 0 && parseFloat(down_display.textContent) !== 0 && down_display.textContent != ''){
         total_final.push(parseFloat(down_display.textContent));
         let result = calculateTotal(total_final);
-        up_display.textContent = `${total_final.join(' ')} = ${result}`
+        up_display.textContent = `${total_final.join(' ')} = ${roundNum(result)}`
         total_final = [];
         total = [];
-        down_display.textContent = '';
+        down_display.textContent = parseFloat(roundNum(result));
     } 
 };
 
@@ -112,3 +122,4 @@ back.addEventListener('click',
         down_display.textContent = total.join('');
     }
 );
+
