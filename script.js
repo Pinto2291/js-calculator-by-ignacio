@@ -112,19 +112,3 @@ back.addEventListener('click',
         down_display.textContent = total.join('');
     }
 );
-
-
-/*
-let total1 = [10, '+', 50, '+', -200, '+', 1350, 'x', 2, '/', 10];
-let total2 = [50, 'x', 2, '+', 105.55, '+', -889.33, '-', 15.90, '/', 2, '+', 45 ];
-
-
-console.log(calculateTotal(total1));
-console.log(calculateTotal(total2));
-*/
-
-
-
-let number1 = 12;
-
-console.log(number1 % 2)
