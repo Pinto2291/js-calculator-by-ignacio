@@ -11,10 +11,10 @@ let total = [];
 let total_final = [];
 
 const operation = {
-    '+': function(n) {return n[0] + n[2]},
-    '-': function(n) {return n[0] - n[2]},
-    'x': function(n) {return n[0] * n[2]},
-    '/': function(n) {return n[0] / n[2]},
+    '+': (n) => n[0] + n[2],
+    '-': (n) => n[0] - n[2],
+    'x': (n) => n[0] * n[2],
+    '/': (n) => n[0] / n[2],
 }
 
 function roundNum(n) {
